@@ -1,0 +1,20 @@
+[
+	{
+		"title": "auto",
+		"prices": "500.000",
+		"thumbnail": "www.thumdsdsbnail.com/auto/",
+		"id": 1
+	},
+	{
+		"title": "Pc",
+		"prices": "50.000",
+		"thumbnail": "www.thumdsdsbnail.com/Pc/",
+		"id": 2
+	},
+	{
+		"title": "Casa",
+		"prices": "500.000.000",
+		"thumbnail": "www.thumdsdsbnail.com/Casa/",
+		"id": 3
+	}
+]
