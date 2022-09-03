@@ -1,6 +1,7 @@
 import {Router} from 'express';
 import services from "../dao/index.js";
 
+
 const router = Router();
 
 router.get('/:cid/products',async(req,res)=>{
@@ -37,9 +38,6 @@ router.delete('/:cid/products/:pid',async(req,res)=>{
    res.send(deleten)
 })
 
-router.get('/prueba',async(req,res)=>{
-   let list = await services.cartsService.prueba()
-   res.send(list)
-})
+
 
 export default router;

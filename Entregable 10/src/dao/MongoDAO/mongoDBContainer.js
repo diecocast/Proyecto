@@ -7,9 +7,14 @@ export default class MongoDBContainer{
     }
 
     getAll = async() =>{
-        let data = await this.model.find()
-        let element = JSON.stringify(data)
-        return element
+        try {
+            let data = await this.model.find()
+            let element = JSON.stringify(data)
+            return element
+        } catch (error) {
+            return "Hay un error "
+        }
+
     }
 
     getById = async(idNumber) =>{
@@ -31,12 +36,10 @@ export default class MongoDBContainer{
     deleteById = async(idDelete) =>{
         try {
             const data = await this.getAll()
-            if (await this.model.countDocuments()>=idDelete) {
               let result = await this.model.deleteOne({id:idDelete})
               console.log(result)
-            } else {
-                console.log("El id pedido no existe")
-            }
+             console.log("Elimeted")
+            
         } catch (error) {
             console.log("Hay un error:" + error)
         }        

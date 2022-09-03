@@ -1,6 +1,8 @@
 import MemoryContainer from "./MemoryContainer.js";
-
+import Carts from "./Carts.js";
+let cartsManager = new Carts();
 export default class Products extends MemoryContainer{
+
     save = async(product) =>{   
         let datenow = new Date();
         function generateDatabaseDateTime(date) {

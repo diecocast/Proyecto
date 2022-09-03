@@ -1,6 +1,6 @@
 import MemoryContainer from "./MemoryContainer.js";
-const {default:MemProducts} = await import('../MemoryDAO/Products.js')
-const productsService = new MemProducts();
+import MemProducts from './Products.js'
+//const productsService = new MemProducts();
 export default class Products extends MemoryContainer{
     update = async(obj,cid) =>{
         try {
@@ -83,17 +83,11 @@ export default class Products extends MemoryContainer{
     getCartProducts = async(cid)=>{
 
         try {
-            const data = productsService.getAll();
-            console.log(data,"PRUEBAAAAAAAAAAAAAAAAAA")
             let product = await this.getById(cid)
-            let list= [];
-            console.log("product.products : " , Object.values(product.products))
-            Object.values(product.products).forEach((pid) => {
-            let productos = data.find((element) => element.id == pid.product)
-            list.push(productos)
-        })
-        console.log("list : ",list)
-        return list
+            let listproducts = Object.values(product.products)
+            console.log(listproducts)
+            return listproducts
+        
         } catch (error) {
             return `Hay un error o se a mandaod un producto invalido`
         }
@@ -114,11 +108,5 @@ export default class Products extends MemoryContainer{
             return `Hay un error o se a mandaod un producto invalido`
         }
     }
-    prueba = async()=>{
 
-        const data = productsService.getAll();
-        console.log(data)
-        return data
-        
-    }
 }
